@@ -1,0 +1,92 @@
+
+<div>
+  <div *ngIf="stepClass" class="input-range">
+    <input  type='range' [min]='minValue' [(ngModel)]="sliderIntegerValue" [max]='maxValue' value='1' step='step' [ngClass]="stepClass" (click)="callApi($event)"/>
+  </div>
+</div>
+
+  <div  class="input-range">
+      <span class="label-value">Expired</span>
+      <span class="label-value">Active</span>
+      <span class="label-value " style="text-align: right">Future</span>
+      <span class="label-value" style="text-align: right">All</span>
+  </div>
+  
+<span class="table-container">
+  
+    <table class="table" *ngIf="stepValues[sliderIntegerValue - 1] == 'Expired'">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>name</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let record of responseData">
+            <td>{{record.id}}</td>
+            <td>{{record.name}}</td>
+            <td>{{record.email}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+      <table class="table" *ngIf="stepValues[sliderIntegerValue - 1] == 'Active'">
+          <thead>
+            <tr>
+              <th>UserId</th>
+              <th>Title</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let record of responseData">
+              <td>{{record.userId}}</td>
+              <td>{{record.title}}</td>
+            </tr>
+          
+          </tbody>
+        </table>
+
+
+
+        <table class="table" *ngIf="stepValues[sliderIntegerValue - 1] == 'Future'">
+            <thead>
+              <tr>
+                <th>UserId</th>
+                <th>title</th>
+                <th>Completed</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let record of responseData">
+                <td>{{record.userId}}</td>
+                <td>{{record.title}}</td>
+                <td>{{record.completed}}</td>
+              </tr>
+            
+            </tbody>
+          </table >
+
+
+          <table class="table" *ngIf="stepValues[sliderIntegerValue - 1] == 'All'">
+              <thead>
+                <tr>
+                  <th>Post Id</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let record of responseData">
+                  <td>{{record.postId}}</td>
+                  <td>{{record.name}}</td>
+                  <td>{{record.email}}</td>
+                </tr>
+              
+              </tbody>
+            </table>
+          </span>
+
+

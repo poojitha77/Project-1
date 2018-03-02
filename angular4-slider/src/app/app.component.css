@@ -1,0 +1,28 @@
+.slider-container {
+    margin-top: 100px;
+}
+
+.slider-label-container {
+    width: 100%;
+}
+
+.col15 {
+    width: 15%;
+    margin: 0;
+    padding: 0;
+}
+
+.col70 {
+    width: 70%;
+    margin: 0;
+    padding: 0;
+}
+
+.label-value{
+    float: left;
+    text-align: center;
+    width: 13.5%;
+    margin: 0;
+    padding: 0;
+    
+}
